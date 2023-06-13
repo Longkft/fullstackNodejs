@@ -1,0 +1,21 @@
+"body-parser": "^1.19.0", (viết api )
+    "dotenv": "^8.2.0", (lấy tham số khai báo trong file môi trường)
+    "ejs": "^3.1.5", (muốn chạy màn hình trên server chúng ta cần 1 cái viewenjen)
+    "express": "^4.17.1", (framework)
+
+"@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.7"
+
+npm install body-parser@1.19.0 dotenv@8.2.0 ejs@3.1.5 express@4.17.1
+npm install --save-dev @babel/core@7.12.10 @babel/node@7.12.10 @babel/preset-env@7.12.11 nodemon@2.0.7
+
+npm install --save sequelize@6.6.2
+npm install --save-dev sequelize-cli@6.2.0 (CLI command line interface)
+
+npx sequelize-cli init
+
+node_modules/.bin/sequelize init
+
+npx sequelize-cli db:migrate
