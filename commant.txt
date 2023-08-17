@@ -34,3 +34,17 @@ npx sequelize-cli init
 node_modules/.bin/sequelize init
 
 npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+
+user  id, email, password, fullname, address, phonenumber, gender, roleid
+-admin
+-doctor
+-patients
+
+schedule(kế hoạch) id, currentNumber, maxNumber, date, timeType, doctorID
+
+histort id, patienid, doctorid, description
+
+allCode id, key(role, status, time), type, value
+
+booking id, statusID, doctorID, patienid, date, timeType
