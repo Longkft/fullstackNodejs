@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Data Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>email</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>address</th>
+                <th>gender</th>
+                <th>phoneNumber</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const item of items) { %>
+                <tr>
+                    <td>
+                        <%= item.email %>
+                    </td>
+                    <td>
+                        <%= item.firstName %>
+                    </td>
+                    <td>
+                        <%= item.lastName %>
+                    </td>
+                    <td>
+                        <%= item.address %>
+                    </td>
+                    <td>
+                        <%= item.gender == 1 ? 'nam' : 'nu' %>
+                    </td>
+                    <td>
+                        <%= item.phoneNumber %>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>
