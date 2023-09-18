@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine";
 import initWebroutes from "./route/web";
+import initLoginroutes from "./route/API-login";
 import connectDB from "./config/connectDB";
 require('dotenv').config();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 viewEngine(app);
 initWebroutes(app);
+initLoginroutes(app);
 
 connectDB();
 

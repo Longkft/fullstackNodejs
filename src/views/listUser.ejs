@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Read User</title>
 </head>
 
 <body>
+    <button><a class="" href="/crud">Thêm tài khoản</a></button>
     <h1>Data Table</h1>
     <table>
         <thead>
@@ -18,6 +19,7 @@
                 <th>address</th>
                 <th>gender</th>
                 <th>phoneNumber</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +42,12 @@
                     </td>
                     <td>
                         <%= item.phoneNumber %>
+                    </td>
+                    <td>
+                        <a href="/edit-user/<%= item.id %>">Sửa</a>
+                        <form action="/delete-user/<%= item.id %>" method="post">
+                            <button type="submit">Xóa</button>
+                        </form>
                     </td>
                 </tr>
                 <% } %>

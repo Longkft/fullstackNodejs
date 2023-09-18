@@ -39,13 +39,71 @@ let finfAllOther = (data) => {
         try {
             let allUser = await db.User.findAll();
             resolve(allUser);
-        }catch(e){
+        } catch (e) {
             reject(e);
         }
     })
 }
 
+let findUserById = (id) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const user = await db.User.findByPk(id);
+
+            if (!user) {
+                return reject('User not found!');
+            }
+
+            resolve(user);
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
+let updateUser = (id, updateData) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const user = await db.User.findOne({
+                where: { id }
+            });
+
+            if (!user) {
+                return reject('User not found!');
+            }
+
+            // Cập nhật thông tin người dùng
+            await user.update(updateData);
+
+            resolve();
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
+let deleteUser = (id) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const user = await db.User.findByPk(id);
+
+            if (!user) {
+                reject('User not found!');
+            }
+
+            await user.destroy();
+
+            resolve();
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
 module.exports = {
     createNewUser: createNewUser,
-    finfAllOther: finfAllOther
+    finfAllOther: finfAllOther,
+    findUserById: findUserById,
+    updateUser: updateUser,
+    deleteUser: deleteUser,
 }
